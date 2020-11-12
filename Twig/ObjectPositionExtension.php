@@ -9,7 +9,7 @@ use Pix\SortableBehaviorBundle\Services\PositionHandler;
  *
  * @author Volker von Hoesslin <volker.von.hoesslin@empora.com>
  */
-class ObjectPositionExtension extends \Twig_Extension
+class ObjectPositionExtension extends \Twig\Extension\AbstractExtension
 {
     const NAME = 'sortableObjectPosition';
 
@@ -42,8 +42,8 @@ class ObjectPositionExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('currentObjectPosition', array($this, 'currentPosition')),
-            new \Twig_SimpleFunction('lastPosition', array($this, 'lastPosition'))
+            new \Twig\TwigFunction('currentObjectPosition', array($this, 'currentPosition')),
+            new \Twig\TwigFunction('lastPosition', array($this, 'lastPosition'))
         );
     }
 
